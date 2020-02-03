@@ -25,25 +25,38 @@ class Book
     }
 
     // Add the methods here ...
-    
+    /**
+     *  get author
+     */
     public String getAuthor()
     {
         return author;
     }
+    /**
+     * get title
+     */
     public String getTitle()
     {
         return title;
     }
+    /**
+     * get Pages
+     */
     public int getPages()
     {
         return pages;
     }
     
-    
+    /**
+     * print author
+     */
     public void printAuthor()
     {
         System.out.println(author);
     }
+    /**
+     * print title
+     */
     public void printTitle()
     {
         System.out.println(title);
