@@ -77,7 +77,14 @@ class Book
     }
     public void setRefNumber(String ref)
     {
-        refNumber = ref;
+        if ( ref.length() >= 3 )
+        {
+            refNumber = ref;
+        }
+        else
+        {
+            System.out.println("ERROR: ref number has to have three digits long");
+        }
     }
     public String getRefNumber()
     {
