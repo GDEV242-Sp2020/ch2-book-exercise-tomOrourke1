@@ -13,6 +13,7 @@ class Book
     private String title;
     private int pages;
     private String refNumber;
+    private int borrowed;
     /**
      * Set the author and title fields when this object
      * is constructed.
@@ -23,6 +24,7 @@ class Book
         title = bookTitle;
         pages = bookPages;
         setRefNumber("");
+        borrowed = 0;
     }
 
     // Add the methods here ...
@@ -64,14 +66,16 @@ class Book
     }
     public void printDetails()
     {
-        if ( refNumber.length() > 0)
+        System.out.println("NOT IN IT");
+        if ( refNumber.length() >= 3)
         {
-            System.out.println("Title: " + title + ", Author: " + author + ", Pages: " + pages + ", Reference Number: " + refNumber);
+            System.out.println("OUT IIN IT");
+            System.out.println("Title: " + title + ", Author: " + author + ", Pages: " + pages + ", Reference Number: " + refNumber + ", Borrowed: " + getBorrowed());
         }
         else
         {
             refNumber = "ZZZ";
-            System.out.println("Title: " + title + ", Author: " + author + ", Pages: " + pages + ", Reference Number: " + refNumber);
+            System.out.println("Title: " + title + ", Author: " + author + ", Pages: " + pages + ", Reference Number: " + refNumber + ", Borrowed: " + getBorrowed());
         }
         
     }
@@ -84,11 +88,20 @@ class Book
         else
         {
             System.out.println("ERROR: ref number has to have three digits long");
+            refNumber = "";
         }
     }
     public String getRefNumber()
     {
         return refNumber;
+    }
+    public void borrow()
+    {
+        borrowed += 1;
+    }
+    public int getBorrowed()
+    {
+        return borrowed;
     }
     
     
